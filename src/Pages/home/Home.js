@@ -34,11 +34,13 @@ const Home = ({ user, category }) => {
     <section>
       <Container>
         <Row>
-          <Col xs={3}>
+          <Col xs={12} sm={3}>
             <Navbar />
           </Col>
 
-          <Col xs={9}>{swapContent()}</Col>
+          <Col xs={12} sm={9}>
+            {swapContent()}
+          </Col>
         </Row>
       </Container>
     </section>

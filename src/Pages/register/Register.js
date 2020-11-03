@@ -60,7 +60,7 @@ const Register = ({ registerUser }) => {
   return (
     <section>
       <div className='form-container'>
-        <h2 style={{ marginBottom: 40 }}>S'enregistrer</h2>
+        <h2>S'enregistrer</h2>
         <Form noValidate onSubmit={handleSubmit}>
           <Form.Group controlId='formBasicName'>
             <Form.Label>Nom</Form.Label>

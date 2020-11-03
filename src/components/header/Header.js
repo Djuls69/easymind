@@ -7,7 +7,11 @@ import './Header.css'
 
 const Header = ({ user, logoutUser, history }) => {
   return (
-    <Navbar bg='primary' variant='dark'>
+    <Navbar
+      style={{ overflow: 'hidden', width: '100vw' }}
+      bg='primary'
+      variant='dark'
+    >
       <Container>
         <Navbar.Brand as={Link} to='/'>
           EasyMind
