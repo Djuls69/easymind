@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Col, Container, Row } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import Contacts from '../../components/contacts/Contacts'
@@ -11,7 +12,27 @@ const Home = ({ user, category }) => {
     return (
       <section>
         <Container>
-          <h4>Merci de vous connecter</h4>
+          <div className='landing-content'>
+            <h1>EasyMind</h1>
+            <p className='lead'>
+              EasyMind est une application simple, qui va vous permettre
+              d'enregistrer des données importantes, tels que des contacts, des
+              courriers, ou des penses-bêtes, pour vous aider au mieux à
+              réaliser vos démarches.
+            </p>
+            <hr />
+            <p className='lead'>
+              Pour commencer, merci de bien vouloir vous
+              <br />
+              <Link style={{ color: '#1f9bcf' }} to='/login'>
+                connecter
+              </Link>{' '}
+              ou vous{' '}
+              <Link style={{ color: '#1f9bcf' }} to='/register'>
+                inscrire
+              </Link>
+            </p>
+          </div>
         </Container>
       </section>
     )

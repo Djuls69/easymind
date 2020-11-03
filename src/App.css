@@ -3,6 +3,12 @@ section {
   min-height: 75vh;
 }
 
+.landing-content {
+  max-width: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .form-container h2 {
   margin-bottom: 40px;
 }
