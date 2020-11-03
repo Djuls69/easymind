@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux'
-import { reducer as formReducer } from 'redux-form'
 import usersReducer from './usersReducer'
 import categoriesReducer from './categoriesReducer'
 import { contactsReducer, contactReducer } from './contactsReducer'
+import { mailsReducer } from './mailsReducer'
 
 const rootReducer = combineReducers({
   usersReducer,
   categoriesReducer,
   contactsReducer,
   contactReducer,
-  form: formReducer
+  mailsReducer
 })
 
 export default rootReducer

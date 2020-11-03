@@ -5,7 +5,7 @@ import { sendMail, deleteMail } from '../../redux/actions/mailActions'
 import { connect } from 'react-redux'
 
 const MailItem = ({ mail, sendMail, deleteMail }) => {
-  const { _id, title, subject, description, isSended, sendedDate } = mail
+  const { id, title, subject, body, isSended, sendedDate } = mail
 
   return (
     <Card style={{ marginBottom: 20 }}>
@@ -19,17 +19,17 @@ const MailItem = ({ mail, sendMail, deleteMail }) => {
             Envoyé le {<Moment format='DD/MM/YYYY'>{sendedDate}</Moment>}
           </Card.Subtitle>
         )}
-        <Card.Text className='mb-2'>{description}</Card.Text>
+        <Card.Text className='mb-2'>{body}</Card.Text>
         {!isSended && (
           <Button
-            onClick={() => sendMail(_id)}
+            onClick={() => sendMail(id)}
             variant='success'
             className='mr-2'
           >
             <i className='fas fa-check'></i> Envoyé ?
           </Button>
         )}
-        <Button onClick={() => deleteMail(_id)} variant='danger'>
+        <Button onClick={() => deleteMail(id)} variant='danger'>
           Supprimer
         </Button>
       </Card.Body>

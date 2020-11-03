@@ -8,6 +8,7 @@ import Home from './Pages/home/Home'
 import Footer from './components/footer/Footer'
 import CreateContact from './Pages/create-contact/CreateContact'
 import UpdateContact from './Pages/update-contact/UpdateContact'
+import CreateMail from './Pages/create-mail/CreateMail'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route exact path='/login' component={Login} />
         <Route exact path='/create-contact' component={CreateContact} />
         <Route exact path='/update-contact/:id' component={UpdateContact} />
+        <Route exact path='/create-mail' component={CreateMail} />
       </Switch>
       <Footer />
     </Router>

@@ -3,7 +3,8 @@ import {
   LOGOUT_USER,
   REGISTER_USER,
   LOGIN_USER,
-  CLEAR_CONTACTS
+  CLEAR_CONTACTS,
+  CLEAR_MAILS
 } from '../types'
 
 export const registerUser = values => async dispatch => {
@@ -49,6 +50,7 @@ export const logoutUser = history => async dispatch => {
     await auth.signOut()
     dispatch({ type: LOGOUT_USER })
     dispatch({ type: CLEAR_CONTACTS })
+    dispatch({ type: CLEAR_MAILS })
     localStorage.removeItem('persist:easymind')
     history.push('/login')
   } catch (err) {
