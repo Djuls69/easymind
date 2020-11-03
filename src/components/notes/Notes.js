@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
+import { Button, Spinner } from 'react-bootstrap'
+import { fetchNotes } from '../../redux/actions/notesAction'
 import { connect } from 'react-redux'
+import NotesItem from '../notes-item/NotesItem'
 
-const Notes = () => {
+const Notes = ({ notesReducer, fetchNotes }) => {
+  const { loading, notes } = notesReducer
+
+  useEffect(() => {
+    fetchNotes()
+  }, [fetchNotes])
+
   return (
     <div>
-      <h4 className='mb-4'>Notes importantes</h4>
+      <h4 className='mb-4'>Liste des notes</h4>
       <Button
         as={Link}
         to='/create-note'
@@ -16,9 +24,23 @@ const Notes = () => {
         Créer une nouvelle note
       </Button>
 
-      <h1>Work in progress ...</h1>
+      {loading ? (
+        <Spinner
+          style={{ display: 'block' }}
+          animation='border'
+          variant='info'
+        />
+      ) : notes.length === 0 ? (
+        <h4 className='lead'>Pas de notes créés pour le moment</h4>
+      ) : (
+        notes.map(note => <NotesItem key={note.id} note={note} />)
+      )}
     </div>
   )
 }
 
-export default connect(null, {})(Notes)
+const mapState = state => ({
+  notesReducer: state.notesReducer
+})
+
+export default connect(mapState, { fetchNotes })(Notes)

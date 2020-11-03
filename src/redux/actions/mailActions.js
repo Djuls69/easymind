@@ -47,7 +47,8 @@ export const createMailAction = (values, history) => async (
 export const sendMail = id => async dispatch => {
   try {
     await db.collection('mails').doc(id).update({
-      isSended: true
+      isSended: true,
+      sendedDate: Date.now()
     })
     dispatch(fetchMails())
   } catch (err) {

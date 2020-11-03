@@ -1,4 +1,4 @@
-import { FETCH_MAILS } from '../types'
+import { FETCH_MAILS, CLEAR_MAILS } from '../types'
 
 const mails_state = {
   loading: true,
@@ -10,6 +10,8 @@ export const mailsReducer = (state = mails_state, action) => {
   switch (type) {
     case FETCH_MAILS:
       return { loading: false, mails: payload }
+    case CLEAR_MAILS:
+      return { loading: true, mails: [] }
     default:
       return state
   }

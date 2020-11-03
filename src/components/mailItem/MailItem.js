@@ -13,10 +13,12 @@ const MailItem = ({ mail, sendMail, deleteMail }) => {
         <Card.Title style={{ color: isSended && '#4bbf73' }}>
           {isSended && <i className='fas fa-check'></i>} {title}
         </Card.Title>
-        <Card.Subtitle className='mb-2 text-muted'>{subject}</Card.Subtitle>
+        <Card.Subtitle className='mb-2 text-muted'>
+          Sujet: {subject}
+        </Card.Subtitle>
         {isSended && (
           <Card.Subtitle className='mb-2 text-muted'>
-            Envoyé le {<Moment format='DD/MM/YYYY'>{sendedDate}</Moment>}
+            Envoyé le: {<Moment format='DD/MM/YYYY'>{sendedDate}</Moment>}
           </Card.Subtitle>
         )}
         <Card.Text className='mb-2'>{body}</Card.Text>

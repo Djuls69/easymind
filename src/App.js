@@ -9,6 +9,7 @@ import Footer from './components/footer/Footer'
 import CreateContact from './Pages/create-contact/CreateContact'
 import UpdateContact from './Pages/update-contact/UpdateContact'
 import CreateMail from './Pages/create-mail/CreateMail'
+import CreateNote from './Pages/create-note/CreateNote'
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route exact path='/create-contact' component={CreateContact} />
         <Route exact path='/update-contact/:id' component={UpdateContact} />
         <Route exact path='/create-mail' component={CreateMail} />
+        <Route exact path='/create-note' component={CreateNote} />
       </Switch>
       <Footer />
     </Router>
