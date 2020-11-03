@@ -3,13 +3,13 @@ import 'firebase/auth'
 import 'firebase/firestore'
 
 firebase.initializeApp({
-  apiKey: 'AIzaSyD3aEbTnJcS6EaNh4CZnJvZW-ekMZeEKoM',
-  authDomain: 'easy-mind-a92aa.firebaseapp.com',
-  databaseURL: 'https://easy-mind-a92aa.firebaseio.com',
-  projectId: 'easy-mind-a92aa',
-  storageBucket: 'easy-mind-a92aa.appspot.com',
-  messagingSenderId: '930871630571',
-  appId: '1:930871630571:web:343e9a4779c2fa8a44bcae'
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  databaseURL: process.env.REACT_APP_databaseURL,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
 })
 
 export const auth = firebase.auth()
